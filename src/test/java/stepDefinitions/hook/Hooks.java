@@ -1,18 +1,22 @@
-package hook;
+package stepDefinitions.hook;
 
-import config.ConfigurationManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import utils.BrowserUtils;
+import config.ConfigurationManager;
 import utils.DriverManager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import utils.BrowserUtils;
 
+/**
+ * The Hooks class contains Cucumber hook methods that are executed before and after each
+ * scenario. It provides setup and teardown operations for the test scenarios.
+ */
 public class Hooks {
 
 	public static final Logger LOGGER = LogManager.getLogger(Hooks.class);
