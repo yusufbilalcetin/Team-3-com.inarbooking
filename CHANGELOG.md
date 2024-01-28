@@ -1,0 +1,1 @@
+-[Home Page framework implemented](https://inaracademygroup3.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-126)

@@ -11,9 +11,9 @@
 #3. Click on the Flight Tab
 #4. Validate the Flight Tab Includes Search Bar and Options for Flight
 
-@smoke @example @deneme
+@smoke @FlightTab
 Feature: Flight Tab
-
+#
   Background:
     Given I navigate to the baseURL
     And I click on the Booking Link
