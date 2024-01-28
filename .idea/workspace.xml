@@ -4,37 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4677934e-9d01-4aec-8151-99ebaf4d67a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/headerSection/FlightTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/headerSection/HotelTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/headerSection/TabBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/hotels/Hotel_DetailPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/hotels/Hotels_FilterAndList_Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/JSUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Pages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TimeStampGen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/extent.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spark-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/BaseStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/BasicStepDefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/FlightTab_StepDefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/hotelBooking/HotelFiltering_StepDefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/hotelBooking/HotelTab_StepDefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/extent.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/BK_FL_01_FlightTabTest.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/BK_HT_01_HotelTabTest.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/BK_HT_02_HotelSearchTest.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/spark-config.xml" afterDir="false" />
+    <list default="true" id="4677934e-9d01-4aec-8151-99ebaf4d67a1" name="Changes" comment="&#9;&#10;SCRUM-126 Home  Page Implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ConfigurationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ConfigurationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hook/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/hook/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runners/CukesRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/CukesRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,15 +59,16 @@
       <recent name="pages.headerSection" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CukesRunner">
-    <configuration name="Feature: BK_FL_01_FlightTabTest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice (1)">
+    <configuration name="Scenario: Validate that the Hotel Search filters by Fitness Center" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/BK_FL_01_FlightTabTest.feature" />
-      <option name="GLUE" value="stepDefinitions" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Hotel.feature" />
+      <option name="GLUE" value="stepDefinitions.hook stepDefinitions.hotelBooking" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="com.inarbooking" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: BK_FL_01_FlightTabTest" />
+      <option name="NAME_FILTER" value="^Validate that the Hotel Search filters by Fitness Center$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate that the Hotel Search filters by Fitness Center$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validate that the Hotel Search filters by Fitness Center" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -107,14 +80,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: BK_HT_01_HotelTabTest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Validate that the Hotel Search filters by selected choice (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/BK_HT_01_HotelTabTest.feature" />
-      <option name="GLUE" value="hook stepDefinitions" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Flight.feature" />
+      <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="com.inarbooking" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: BK_HT_01_HotelTabTest" />
+      <option name="NAME_FILTER" value="^Validate that the Hotel Search filters by selected choice$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate that the Hotel Search filters by selected choice$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validate that the Hotel Search filters by selected choice" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -126,15 +100,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Validate the Flight Tab Includes Search Bar and Options for Flight" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Validate that the Hotel Search filters by selected choice" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/BK_FL_01_FlightTabTest.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Hotel.feature" />
+      <option name="GLUE" value="stepDefinitions.hook stepDefinitions.hotelBooking" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.inarbooking" />
+      <option name="NAME_FILTER" value="^Validate that the Hotel Search filters by selected choice$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate that the Hotel Search filters by selected choice$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validate that the Hotel Search filters by selected choice" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Validate that the Search Flights filters by Fitness Center (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Flight.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="com.inarbooking" />
-      <option name="NAME_FILTER" value="^Validate the Flight Tab Includes Search Bar and Options for Flight$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate the Flight Tab Includes Search Bar and Options for Flight$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Validate the Flight Tab Includes Search Bar and Options for Flight" />
+      <option name="NAME_FILTER" value="^Validate that the Search Flights filters by Fitness Center$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validate that the Search Flights filters by Fitness Center$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validate that the Search Flights filters by Fitness Center" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -174,10 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Validate that the Search Flights filters by Fitness Center (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice" />
         <item itemvalue="JUnit.CukesRunner" />
-        <item itemvalue="Cucumber Java.Feature: BK_FL_01_FlightTabTest" />
-        <item itemvalue="Cucumber Java.Scenario: Validate the Flight Tab Includes Search Bar and Options for Flight" />
-        <item itemvalue="Cucumber Java.Feature: BK_HT_01_HotelTabTest" />
+        <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by Fitness Center" />
       </list>
     </recent_temporary>
   </component>
@@ -190,6 +185,30 @@
       <option name="presentableId" value="Default" />
       <updated>1706417657656</updated>
     </task>
+    <task id="LOCAL-00001" summary="&#9;&#10;SCRUM-126 Home  Page Implemented">
+      <option name="closed" value="true" />
+      <created>1706466656570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706466656570</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&#9;&#10;SCRUM-126 Home  Page Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#9;&#10;SCRUM-126 Home  Page Implemented" />
   </component>
 </project>
