@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4677934e-9d01-4aec-8151-99ebaf4d67a1" name="Changes" comment="&#9;&#10;SCRUM-126 Home  Page Implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Pages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +36,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/workspace/Team-3-com.inarbooking/src/test/java/stepDefinitions/flightBooking&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Scenario: Validate that the Hotel Search filters by Fitness Center (1).executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lenovo/workspace/Team-3-com.inarbooking/src/test/java/stepDefinitions/flightBooking",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\workspace\Team-3-com.inarbooking\src\test\resources\features" />
@@ -59,11 +64,10 @@
       <recent name="pages.headerSection" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice (1)">
-    <configuration name="Scenario: Validate that the Hotel Search filters by Fitness Center" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Validate that the Hotel Search filters by Fitness Center (1)">
+    <configuration name="Scenario: Validate that the Hotel Search filters by Fitness Center (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Hotel.feature" />
-      <option name="GLUE" value="stepDefinitions.hook stepDefinitions.hotelBooking" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/hotel.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="com.inarbooking" />
       <option name="NAME_FILTER" value="^Validate that the Hotel Search filters by Fitness Center$" />
@@ -168,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by Fitness Center (1)" />
         <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice (1)" />
         <item itemvalue="Cucumber Java.Scenario: Validate that the Search Flights filters by Fitness Center (1)" />
         <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by selected choice" />
         <item itemvalue="JUnit.CukesRunner" />
-        <item itemvalue="Cucumber Java.Scenario: Validate that the Hotel Search filters by Fitness Center" />
       </list>
     </recent_temporary>
   </component>

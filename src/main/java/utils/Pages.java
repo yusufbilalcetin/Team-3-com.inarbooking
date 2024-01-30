@@ -4,7 +4,7 @@ import lombok.Data;
 import pages.HomePage;
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
-import pages.headerSection.TabBar;
+//import pages.headerSection.TabBar;
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
 
@@ -21,7 +21,7 @@ public class Pages {
 
 	private Hotels_FilterAndList_Page hotels_filterAndList_page;
 
-	private TabBar tabBar;
+//	private TabBar tabBar;
 
 	public Pages() {
 		homePage = new HomePage();
@@ -32,7 +32,7 @@ public class Pages {
 		hotel_detailPage = new Hotel_DetailPage();
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
 
-		tabBar = new TabBar();
+//		tabBar = new TabBar();
 	}
 
 	public HomePage getHomePage() {
@@ -55,8 +55,8 @@ public class Pages {
 		return hotels_filterAndList_page;
 	}
 
-	public TabBar getTabBar() {
-		return tabBar;
-	}
+//	public TabBar getTabBar() {
+//		return tabBar;
+//	}
 
 }
