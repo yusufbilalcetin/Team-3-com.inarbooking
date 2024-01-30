@@ -16,7 +16,7 @@ public class HotelTab_StepDefs extends BaseStep {
 
 	@When("The user click on the Hotel Tab")
 	public void i_click_on_the_hotel_tab() {
-		PAGES.getTabBar().clickOnStaysTab();
+		PAGES.getBookingHomePage().clickOnStaysTab();
 		LOGGER.info("I clicked on the Hotel Tab");
 	}
 

@@ -15,8 +15,10 @@ public class FlightTab extends BasePage {
     @FindBy(className = ".headerSearchInput")
     private List<WebElement> searchBarInputFields;
 
+
     @FindBy(css = ".headerSearch > div")
     private List<WebElement> dateAndPassengers;
+
 
     @FindBy(css = ".headerSearch > div > button")
     private WebElement searchButton;
@@ -52,12 +54,18 @@ public class FlightTab extends BasePage {
         dateAndPassengers.get(3).click();
     }
 
-    public void clickOnSearchFlight() {
-        dateAndPassengers.get(4).click();
-    }
 
-    public String getSearchFlightsButtonText() {
-        return dateAndPassengers.get(4).getText();
-    }
+	public void clickOnPassengersField() {
+		actions.moveToElement(dateAndPassengers.get(3)).click().build().perform();
+	}
+
+	public void clickOnSearchFlight() {
+		actions.moveToElement(dateAndPassengers.get(4)).click().build().perform();
+	}
+
+	public String getSearchFlightsButtonText() {
+		return dateAndPassengers.get(4).getText();
+	}
+
 
 }
