@@ -14,13 +14,13 @@ public class HotelTab_StepDefs extends BaseStep {
 
 	// implement log factory
 
-	@When("I click on the Hotel Tab")
+	@When("The user click on the Hotel Tab")
 	public void i_click_on_the_hotel_tab() {
 		PAGES.getBookingHomePage().clickOnStaysTab();
 		LOGGER.info("I clicked on the Hotel Tab");
 	}
 
-	@Then("I validate the Hotel Tab Includes Search Bar for Hotel")
+	@Then("The user validate the Hotel Tab Includes Search Bar for Hotel")
 	public void i_validate_the_hotel_tab_includes_search_bar_for_hotel() {
 		then(PAGES.getHotelTab().getSearchHotelsButtonText()).as("The Button text does not equal to the Search Hotels")
 			.isEqualTo("Search Hotels");
@@ -30,7 +30,7 @@ public class HotelTab_StepDefs extends BaseStep {
 		LOGGER.info("I validated the Hotel Tab Includes Search Bar for Hotel");
 	}
 
-	@And("I click on the Search Hotels Button")
+	@And("The user click on the Search Hotels Button")
 	public void iClickOnTheSearchHotelsButton() {
 		PAGES.getHotelTab().clickOnSearchButton();
 		LOGGER.info("I clicked on the Search Hotels Button");

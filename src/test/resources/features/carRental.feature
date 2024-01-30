@@ -11,14 +11,14 @@
 #3. Click on the Hotel Tab
 #4. Validate the Hotel Tab Includes Search Bar for Hotel
 
-@smoke @example
+@smoke @HotelTab
 Feature: Hotel Tab
 
   Background:
-    Given I navigate to the baseURL
-    And I click on the Booking Link
+    Given The user navigate to the baseURL
+    And The user click on the Booking Link
 
   Scenario: Validate the Hotel Tab Includes Search Bar for Hotel
 
-    When I click on the Hotel Tab
-    Then I validate the Hotel Tab Includes Search Bar for Hotel
+    When The user click on the Hotel Tab
+    Then The user validate the Hotel Tab Includes Search Bar for Hotel
