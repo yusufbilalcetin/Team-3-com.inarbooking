@@ -5,7 +5,9 @@ import pages.HomePage;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
+
 import pages.headerSection.BookingHomePage;
+
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
 
@@ -22,6 +24,7 @@ public class Pages {
 
 	private Hotels_FilterAndList_Page hotels_filterAndList_page;
 
+
 	private BookingHomePage bookingHomePage;
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
@@ -35,9 +38,11 @@ public class Pages {
 		hotel_detailPage = new Hotel_DetailPage();
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
 
+
 		bookingHomePage = new BookingHomePage();
 
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
+
 	}
 
 	public HomePage getHomePage() {
@@ -59,6 +64,7 @@ public class Pages {
 	public Hotels_FilterAndList_Page getHotels_filterAndList_page() {
 		return hotels_filterAndList_page;
 	}
+
 
 	public BookingHomePage getBookingHomePage() {
 		return bookingHomePage;
