@@ -1,5 +1,6 @@
 package pages.hotels;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,8 @@ import utils.BrowserUtils;
 import java.util.List;
 
 public class Hotels_FilterAndList_Page extends BasePage {
+
+	//Team 3 part stays
 
 	@FindBy(xpath = "//h1[text()='Hotels']")
 	private WebElement hotelsHeader;
