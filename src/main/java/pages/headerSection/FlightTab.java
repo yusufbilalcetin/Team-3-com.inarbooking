@@ -15,7 +15,7 @@ public class FlightTab extends BasePage {
 	@FindBy(xpath = "//*/input[@value='oneWay']")
 	private WebElement oneWay;
 
-	@FindBy(className = ".headerSearchInput")
+	@FindBy(css = ".headerSearchInput")
 	private List<WebElement> searchBarInputFields;
 
 	@FindBy(css = ".headerSearch > div")
@@ -52,11 +52,11 @@ public class FlightTab extends BasePage {
 	}
 
 	public void clickOnPassengersField() {
-		dateAndPassengers.get(3).click();
+		actions.moveToElement(dateAndPassengers.get(3)).click().build().perform();
 	}
 
 	public void clickOnSearchFlight() {
-		dateAndPassengers.get(4).click();
+		actions.moveToElement(dateAndPassengers.get(4)).click().build().perform();
 	}
 
 	public String getSearchFlightsButtonText() {

@@ -2,9 +2,10 @@ package utils;
 
 import lombok.Data;
 import pages.HomePage;
+import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
-import pages.headerSection.TabBar;
+import pages.headerSection.BookingHomePage;
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
 
@@ -21,7 +22,9 @@ public class Pages {
 
 	private Hotels_FilterAndList_Page hotels_filterAndList_page;
 
-	private TabBar tabBar;
+	private BookingHomePage bookingHomePage;
+
+	private Flights_FilterAndList_Page flightsFilterAndListPage;
 
 	public Pages() {
 		homePage = new HomePage();
@@ -32,7 +35,9 @@ public class Pages {
 		hotel_detailPage = new Hotel_DetailPage();
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
 
-		tabBar = new TabBar();
+		bookingHomePage = new BookingHomePage();
+
+		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 	}
 
 	public HomePage getHomePage() {
@@ -55,8 +60,12 @@ public class Pages {
 		return hotels_filterAndList_page;
 	}
 
-	public TabBar getTabBar() {
-		return tabBar;
+	public BookingHomePage getBookingHomePage() {
+		return bookingHomePage;
+	}
+
+	public Flights_FilterAndList_Page getFlightsFilterAndListPage() {
+		return flightsFilterAndListPage;
 	}
 
 }
