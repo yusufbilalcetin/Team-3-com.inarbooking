@@ -10,6 +10,9 @@ import java.util.List;
 
 public class Hotels_FilterAndList_Page extends BasePage {
 
+	@FindBy(xpath = "//h1[text()='Hotels']")
+	private WebElement hotelsHeader;
+
 	@FindBy(css = "div.lsCheckboxItem > span")
 	private List<WebElement> checkBoxChoicesList;
 
@@ -18,6 +21,10 @@ public class Hotels_FilterAndList_Page extends BasePage {
 
 	@FindBy(css = "button.siCheckButton")
 	private List<WebElement> seeAvailabilityButtonList;
+
+	public String getHotelsHeaderText() {
+		return hotelsHeader.getText();
+	}
 
 	public void clickOnCheckBoxChoices(String choice) {
 		BrowserUtils.scrollDownWithPageDownButton(1);
