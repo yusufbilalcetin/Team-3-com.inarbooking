@@ -19,13 +19,13 @@
 Feature: Hotel Filtering
 
   Background:
-    Given I navigate to the baseURL
-    And I click on the Booking Link
+    Given The user navigate to the baseURL
+    And The user click on the Booking Link
 
   Scenario: Validate that the Hotel Search filters by Fitness Center
 
-    When I click on the Hotel Tab
-    And I click on the Search Hotels Button
+    When The user click on the Hotel Tab
+    And The user click on the Search Hotels Button
     And I click on the "Fitness" Check Box on the left side
     And I click on the Search button on the left side
     And I click on the #1 Hotel's See availability Button
@@ -34,8 +34,8 @@ Feature: Hotel Filtering
 
   Scenario: Validate that the Hotel Search filters by Free Parking
 
-    When I click on the Hotel Tab
-    And I click on the Search Hotels Button
+    When The user click on the Hotel Tab
+    And The user click on the Search Hotels Button
     And I click on the "Free parking" Check Box on the left side
     And I click on the Search button on the left side
     And I click on the #1 Hotel's See availability Button
@@ -44,8 +44,8 @@ Feature: Hotel Filtering
 
   Scenario Outline: Validate that the Hotel Search filters by selected choice
 
-    When I click on the Hotel Tab
-    And I click on the Search Hotels Button
+    When The user click on the Hotel Tab
+    And The user click on the Search Hotels Button
     And I click on the "<filter>" Check Box on the left side
     And I click on the Search button on the left side
     And I click on the #1 Hotel's See availability Button

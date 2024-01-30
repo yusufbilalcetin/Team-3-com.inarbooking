@@ -11,12 +11,12 @@
 #3. Click on the Flight Tab
 #4. Validate the Flight Tab Includes Search Bar and Options for Flight
 
-@smoke @example @home
+@smoke @home
 Feature: User Navigation on Booking Home Page
 
   Background:
-    Given I navigate to the baseURL
-    And I click on the Booking Link
+    Given The user navigate to the baseURL
+    And The user click on the Booking Link
 
   Scenario Outline: Navigate and Verify Tabs
     When they click on the "<Tab>" tab

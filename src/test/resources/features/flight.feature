@@ -11,7 +11,7 @@
 #3. Click on the Flight Tab
 #4. Validate the Flight Tab Includes Search Bar and Options for Flight
 
-@smoke @FlightFilter
+@FlightFilter
 Feature: Flight Filtering
 
   Background:

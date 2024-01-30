@@ -24,7 +24,6 @@ public class Pages {
 
 	private Hotels_FilterAndList_Page hotels_filterAndList_page;
 
-
 	private BookingHomePage bookingHomePage;
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
@@ -37,7 +36,6 @@ public class Pages {
 
 		hotel_detailPage = new Hotel_DetailPage();
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
-
 
 		bookingHomePage = new BookingHomePage();
 
@@ -64,7 +62,6 @@ public class Pages {
 	public Hotels_FilterAndList_Page getHotels_filterAndList_page() {
 		return hotels_filterAndList_page;
 	}
-
 
 	public BookingHomePage getBookingHomePage() {
 		return bookingHomePage;
