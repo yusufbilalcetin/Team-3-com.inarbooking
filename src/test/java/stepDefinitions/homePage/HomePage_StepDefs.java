@@ -5,8 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pages.flights.Flights_FilterAndList_Page;
+import org.junit.ComparisonFailure;
+import org.openqa.selenium.NoSuchElementException;
 import stepDefinitions.BaseStep;
+import utils.BrowserUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.BDDAssertions.then;
@@ -70,16 +72,71 @@ public class HomePage_StepDefs extends BaseStep {
 
 	@Then("they navigate to the {string} page")
 	public void theyNavigateToThePage(String page) {
-		switch (page) {
-			case "Flights" -> {
-				then(FLIGHTSFILTER.getFlightsHeaderText()).isEqualTo("Flights");
-				LOGGER.debug("User sees Flights header");
+		try {
+			switch (page) {
+				case "Flights" -> {
+					then(FLIGHTSFILTER.getFlightsHeaderText()).isEqualTo("Flights");
+					LOGGER.debug("User sees Flights header");
+				}
+				case "Hotels" -> {
+					then(HOTELSFILTER.getHotelsHeaderText()).isEqualTo("Hotels");
+					LOGGER.debug("User sees Hotels header");
+				}
 			}
-			case "Hotels" -> {
-				then(HOTELSFILTER.getHotelsHeaderText()).isEqualTo("Hotels");
-				LOGGER.debug("User sees Hotels header");
-			}
+		} catch (NoSuchElementException e) {
+			LOGGER.error("User cannot navigate to the page!");
 		}
 	}
 
+	@When("they click on the {string} card")
+	public void theyClickOnTheCard(String cardName) {
+		HOMEPAGE.clickOnPlistElements(cardName);
+		LOGGER.debug("User clicked on {} card", cardName);
+	}
+
+	@Then("they navigate to Hotels page")
+	public void theyNavigateToHotelsPage() {
+		then(HOTELSFILTER.getHotelsHeaderText()).isEqualTo("Hotels");
+		LOGGER.debug("User sees Hotels header");
+	}
+
+	@And("they see {string} in destination field")
+	public void theySeeInDestinationField(String country) {
+		try {
+			then(HOTELSFILTER.getDestinationInputText()).isEqualTo(country);
+			LOGGER.debug("User sees {} in destination input field", country);
+		} catch (ComparisonFailure e) {
+			LOGGER.error("User cannot see the right destination!");
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@When("they click on {string} car's Rent Car button")
+	public void theyClickOnCarSButton(String carType) {
+		HOMEPAGE.clickOnRentCarButton(carType);
+		LOGGER.debug("User clicked on {} car's Rent Car button", carType);
+	}
+
+	@Then("they navigate to Car rental page")
+	public void theyNavigateToCarRentalPage() {
+		then(CARSFILTER.getHeaderText()).isEqualTo("Car rental");
+		LOGGER.debug("User sees Car rental header");
+	}
+
+	@And("they see {string} card is selected")
+	public void theySeeCardIsSelected(String carType) {
+		assertTrue(CARSFILTER.isSelectedCarImageSameWith(carType));
+		LOGGER.debug("User sees {} car image selected", carType);
+	}
+
+	@And("they see {string} Car Category is selected")
+	public void theySeeCarCategoryIsSelected(String carType) {
+		assertTrue(CARSFILTER.isSelectedCarCategorySameWith(carType));
+		LOGGER.debug("User sees {} car category selected", carType);
+	}
+
+	@And("they see only {string} cars on the list")
+	public void theySeeOnlyCarsOnTheList(String carType) {
+		assertTrue(CARSFILTER.isCarCardsSpecsCorrect("size", carType));
+	}
 }

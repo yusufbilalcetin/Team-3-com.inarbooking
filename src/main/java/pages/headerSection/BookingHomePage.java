@@ -1,9 +1,11 @@
 package pages.headerSection;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class BookingHomePage extends BasePage {
 	private List<WebElement> pListTitles;
 
 	@FindBy(css = ".fpName")
-	private List<WebElement> rentCarButtons;
+	private List<WebElement> carSizeTitles;
 
 	@FindBy(xpath = "//input[@placeholder='Your Email']")
 	private WebElement emailInputField;
@@ -44,6 +46,7 @@ public class BookingHomePage extends BasePage {
 
 	@FindBy(css = ".modal-footer > button")
 	private WebElement modalCloseButton;
+
 
 	public void clickOnTabs(String tabName) {
 		switch (tabName) {
@@ -74,13 +77,13 @@ public class BookingHomePage extends BasePage {
 	}
 
 	public void clickOnBookFlightButton(int index) {
-		bookFlightButtons.get(index - 1).click();
+		actions.scrollToElement(bookFlightButtons.get(index - 1)).click().build().perform();
 	}
 
 	public void clickOnOffersButtons(String pageName) {
 		switch (pageName) {
-			case "Find a stay" -> findAStayButton.click();
-			case "Find Flights" -> findFlightsButton.click();
+			case "Find a stay" -> actions.scrollToElement(findAStayButton).click().build().perform();
+			case "Find Flights" -> actions.scrollToElement(findFlightsButton).click().build().perform();
 		}
 	}
 
@@ -88,16 +91,20 @@ public class BookingHomePage extends BasePage {
 		pListTitles.stream()
 			.filter(element -> element.getText().equalsIgnoreCase(name.toLowerCase()))
 			.findFirst()
-			.ifPresent(WebElement::click);
+			.ifPresent(element -> actions.scrollToElement(element).click().build().perform());
 	}
 
 	public void clickOnRentCarButton(String carSize) {
-		rentCarButtons.stream()
+		carSizeTitles.stream()
 			.filter(element -> element.getText().equalsIgnoreCase(carSize))
 			.findFirst()
-			.map(buttonElement -> buttonElement.findElement(By.xpath("..//button")))
-			.ifPresent(WebElement::click);
+			.map(buttonElement -> buttonElement.findElement(By.xpath("../button")))
+			.ifPresent(element -> {
+				actions.scrollToElement(element).perform();
+				element.click();
+			});
 	}
+
 
 	public void enterSubscribeEmail(String email) {
 		emailInputField.sendKeys(email);
