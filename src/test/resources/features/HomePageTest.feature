@@ -52,3 +52,31 @@ Feature: User Navigation on Booking Home Page
       | Book Flight | Flights |
       | Find a stay | Hotels  |
 
+  Scenario Outline: Navigate to Hotels page via Quick trip planner in Italy
+    When they click on the "<Destination>" card
+    Then they navigate to Hotels page
+    And they see "Italy" in destination field
+
+    Examples:
+      | Destination |
+      | Hotels      |
+      | Resorts     |
+      | Luxury      |
+      | Cabins      |
+
+    Scenario Outline: Navigate to Car rental page via Rent Car buttons
+      When they click on "<CarType>" car's Rent Car button
+      Then they navigate to Car rental page
+      And they see "<CarType>" card is selected
+      And they see "<CarType>" Car Category is selected
+      And they see only "<CarType>" cars on the list
+
+      Examples:
+        | CarType |
+        | Small   |
+        | Medium  |
+        | Minivan |
+        | SUV     |
+        | Large   |
+
+

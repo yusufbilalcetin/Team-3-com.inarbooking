@@ -22,6 +22,13 @@ public class Hotels_FilterAndList_Page extends BasePage {
 	@FindBy(css = "button.siCheckButton")
 	private List<WebElement> seeAvailabilityButtonList;
 
+	@FindBy(xpath = "//input[@class='shadow-md'][1]")
+	private WebElement destinationInput;
+
+	public String getDestinationInputText() {
+		return destinationInput.getAttribute("value");
+	}
+
 	public String getHotelsHeaderText() {
 		return hotelsHeader.getText();
 	}

@@ -2,6 +2,7 @@ package utils;
 
 import lombok.Data;
 import pages.HomePage;
+import pages.carRentals.CarRentalDetails_Page;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
@@ -28,6 +29,8 @@ public class Pages {
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
 
+	private CarRentalDetails_Page carRentalDetailsPage;
+
 	public Pages() {
 		homePage = new HomePage();
 
@@ -40,6 +43,8 @@ public class Pages {
 		bookingHomePage = new BookingHomePage();
 
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
+
+		carRentalDetailsPage = new CarRentalDetails_Page();
 
 	}
 
@@ -70,5 +75,7 @@ public class Pages {
 	public Flights_FilterAndList_Page getFlightsFilterAndListPage() {
 		return flightsFilterAndListPage;
 	}
+
+	public CarRentalDetails_Page getCarRentalDetailsPage() { return carRentalDetailsPage; }
 
 }
