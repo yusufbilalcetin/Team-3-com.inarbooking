@@ -79,6 +79,7 @@ public class FlightVerification_stepDefs extends BaseStep {
     @Then("the user should see that just list of {string} is displayed")
     public void the_user_should_see_that_just_list_of_is_displayed(String string) {
 
+
     }
 
     @And("the user should see that just round way on the tickets")
