@@ -18,7 +18,7 @@ Feature: Car Rental Page
     Given The user navigate to the baseURL
     And The user click on the Booking Link
 
-  Scenario Outline: Validate pickup and drop-off location
+  Scenario Outline: Validate pickup location
 
     When they click on "<CarType>" car's Rent Car button
     Then They see the same "<PickupLocation>" with the card

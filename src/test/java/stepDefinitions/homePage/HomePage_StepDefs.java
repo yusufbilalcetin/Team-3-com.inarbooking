@@ -83,7 +83,8 @@ public class HomePage_StepDefs extends BaseStep {
 					LOGGER.debug("User sees Hotels header");
 				}
 			}
-		} catch (NoSuchElementException e) {
+		}
+		catch (NoSuchElementException e) {
 			LOGGER.error("User cannot navigate to the page!");
 		}
 	}
@@ -105,7 +106,8 @@ public class HomePage_StepDefs extends BaseStep {
 		try {
 			then(HOTELSFILTER.getDestinationInputText()).isEqualTo(country);
 			LOGGER.debug("User sees {} in destination input field", country);
-		} catch (ComparisonFailure e) {
+		}
+		catch (ComparisonFailure e) {
 			LOGGER.error("User cannot see the right destination!");
 			System.out.println(e.getMessage());
 		}
@@ -139,4 +141,5 @@ public class HomePage_StepDefs extends BaseStep {
 	public void theySeeOnlyCarsOnTheList(String carType) {
 		assertTrue(CARSFILTER.isCarCardsSpecsCorrect("size", carType));
 	}
+
 }
