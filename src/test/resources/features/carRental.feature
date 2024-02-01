@@ -30,3 +30,19 @@ Feature: Car Rental Page
       | CarType | PickupLocation   | NewLocation        |
       | Medium  | Central Park     | Golden Gate Bridge |
       | Large   | Heathrow Airport | Grand Bazaar       |
+
+  Scenario Outline: Validate car size
+    When They navigate to the car rental page
+    And They choose "<CarType>" Car Category
+    Then They see only "<CarType>" cars
+    When They click on the first car's View Deal button
+    Then They navigate to the Deal Page
+    And They see "<CarType>" size on the car details
+
+    Examples:
+      | CarType |
+      | Small   |
+      | Medium  |
+      | Large   |
+      | Minivan |
+      | SUV     |

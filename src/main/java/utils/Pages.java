@@ -6,6 +6,7 @@ import pages.carRentals.CarRentalDetails_Page;
 import pages.carRentals.YourDeal_Page;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.FlightTab;
+import pages.headerSection.FlightTabVerification;
 import pages.headerSection.HotelTab;
 
 import pages.headerSection.BookingHomePage;
@@ -34,6 +35,8 @@ public class Pages {
 
 	private YourDeal_Page yourDealPage;
 
+	private FlightTabVerification flightTabVerification;
+
 	public Pages() {
 		homePage = new HomePage();
 
@@ -49,6 +52,8 @@ public class Pages {
 
 		carRentalDetailsPage = new CarRentalDetails_Page();
 		yourDealPage = new  YourDeal_Page();
+
+		flightTabVerification = new FlightTabVerification();
 
 	}
 
@@ -83,5 +88,7 @@ public class Pages {
 	public CarRentalDetails_Page getCarRentalDetailsPage() { return carRentalDetailsPage; }
 
 	public YourDeal_Page getYourDealPage() { return yourDealPage; }
+
+	public FlightTabVerification getFlightTabVerification() { return flightTabVerification; }
 
 }

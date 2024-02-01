@@ -155,6 +155,11 @@ public class CarRentalDetails_Page extends BasePage {
 
 	}
 
+	public void selectCarCategory(String carType) {
+		checkBoxes.stream().filter(element -> element.getAttribute("value")
+						.equalsIgnoreCase(carType)).findFirst().ifPresent(WebElement::click);
+	}
+
 	public boolean isCarCardsSpecsCorrect(String spec, String expected) {
 
         return switch (spec) {

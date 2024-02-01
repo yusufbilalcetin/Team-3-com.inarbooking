@@ -1,5 +1,6 @@
 package stepDefinitions.carRental;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
@@ -32,5 +33,32 @@ public class CarRental_StepDefs extends BaseStep {
     public void they_see_the_same_pickup_location_on_the_page(String location) {
         then(CARDEALPAGE.getPickupDropOffLocation()).isEqualTo(location);
         LOGGER.debug("They see the same pickup location {} on the page", location);
+    }
+
+    @When("They navigate to the car rental page")
+    public void theyNavigateToTheCarRentalPage() {
+        HOMEPAGE.clickOnCarRentalsTab();
+        HOMEPAGE.getHeaderButtonText();
+    }
+
+    @And("They choose {string} Car Category")
+    public void theyChooseCarCategory(String size) {
+
+    }
+
+    @Then("They see only {string} cars")
+    public void theySeeOnlyCars(String arg0, String arg1) {
+    }
+
+    @When("They click on the first car's View Deal button")
+    public void theyClickOnTheFirstCarSViewDealButton() {
+    }
+
+    @Then("They navigate to the Deal Page")
+    public void theyNavigateToTheDealPage() {
+    }
+
+    @And("They see {string} size on the car details")
+    public void theySeeSizeOnTheCarDetails(String arg0, String arg1) {
     }
 }
