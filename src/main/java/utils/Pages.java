@@ -51,7 +51,7 @@ public class Pages {
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 
 		carRentalDetailsPage = new CarRentalDetails_Page();
-		yourDealPage = new  YourDeal_Page();
+		yourDealPage = new YourDeal_Page();
 
 		flightTabVerification = new FlightTabVerification();
 
@@ -85,10 +85,16 @@ public class Pages {
 		return flightsFilterAndListPage;
 	}
 
-	public CarRentalDetails_Page getCarRentalDetailsPage() { return carRentalDetailsPage; }
+	public CarRentalDetails_Page getCarRentalDetailsPage() {
+		return carRentalDetailsPage;
+	}
 
-	public YourDeal_Page getYourDealPage() { return yourDealPage; }
+	public YourDeal_Page getYourDealPage() {
+		return yourDealPage;
+	}
 
-	public FlightTabVerification getFlightTabVerification() { return flightTabVerification; }
+	public FlightTabVerification getFlightTabVerification() {
+		return flightTabVerification;
+	}
 
 }

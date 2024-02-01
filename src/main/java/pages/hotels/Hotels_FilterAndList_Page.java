@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Hotels_FilterAndList_Page extends BasePage {
 
-	//Team 3 part stays
+	// Team 3 part stays
 
 	@FindBy(xpath = "//h1[text()='Hotels']")
 	private WebElement hotelsHeader;

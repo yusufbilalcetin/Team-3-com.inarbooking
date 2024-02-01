@@ -9,12 +9,12 @@ import java.util.List;
 
 public class YourDeal_Page extends BasePage {
 
-	@FindBy(css = ".h2.mb-0 strong")
+	@FindBy(tagName = "strong")
 	private WebElement headerText;
 
 	// 5 features for selected car
 	// 2nd feature is transmission, 4th feature is Car category
-	@FindBy(css = ".my-4.row.m-0")
+	@FindBy(css = ".my-4.row.m-0 > div")
 	private List<WebElement> featuresOfSelectedCar;
 
 	@FindBy(css = ".mb-2")
@@ -45,6 +45,14 @@ public class YourDeal_Page extends BasePage {
 	public String getPickupDropOffLocation() {
 		actions.scrollToElement(pickupDropOffLoc).perform();
 		return pickupDropOffLoc.getText();
+	}
+
+	public String getHeaderText() {
+		return headerText.getText();
+	}
+
+	public String getCarSize() {
+		return featuresOfSelectedCar.get(3).getText();
 	}
 
 }
