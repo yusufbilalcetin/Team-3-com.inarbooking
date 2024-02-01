@@ -39,4 +39,12 @@ public class YourDeal_Page extends BasePage {
 	private List<WebElement> noInsuranceOrFullProtectionPrices;// 1st no insurance 2nd
 																// full protection
 
+	@FindBy(css = ".pickup-and-drop-off-item > div:nth-child(2)")
+	private WebElement pickupDropOffLoc;
+
+	public String getPickupDropOffLocation() {
+		actions.scrollToElement(pickupDropOffLoc).perform();
+		return pickupDropOffLoc.getText();
+	}
+
 }

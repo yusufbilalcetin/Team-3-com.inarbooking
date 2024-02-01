@@ -11,14 +11,22 @@
 #3. Click on the Hotel Tab
 #4. Validate the Hotel Tab Includes Search Bar for Hotel
 
-@smoke @HotelTab
-Feature: Hotel Tab
+@smoke @carrental
+Feature: Car Rental Page
 
   Background:
     Given The user navigate to the baseURL
     And The user click on the Booking Link
 
-  Scenario: Validate the Hotel Tab Includes Search Bar for Hotel
+  Scenario Outline: Validate pickup and drop-off location
 
-    When The user click on the Hotel Tab
-    Then The user validate the Hotel Tab Includes Search Bar for Hotel
+    When they click on "<CarType>" car's Rent Car button
+    Then They see the same "<PickupLocation>" with the card
+    When The user changes Pickup location as "<NewLocation>"
+    And They click on View Deal button
+    Then They see the same pickup location "<NewLocation>" on the page
+
+    Examples:
+      | CarType | PickupLocation   | NewLocation        |
+      | Medium  | Central Park     | Golden Gate Bridge |
+      | Large   | Heathrow Airport | Grand Bazaar       |
