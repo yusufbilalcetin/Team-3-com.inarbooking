@@ -121,10 +121,22 @@ public class BrowserUtils {
 			BrowserUtils.wait(1);
 		}
 	}
+	public static void scrollUpWithPageUp() {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.keyDown(Keys.PAGE_UP).build().perform();
+
+	}
+
 
 	public static void clickOnElement(WebElement element) {
 		Actions actions = new Actions(DriverManager.getDriver());
 		actions.moveToElement(element).click().perform();
+	}
+
+
+	public static void scrollDownWithPageDown() {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.keyDown(Keys.PAGE_DOWN).build().perform();
 	}
 
 }
