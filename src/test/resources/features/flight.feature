@@ -11,13 +11,13 @@
 #3. Click on the Flight Tab
 #4. Validate the Flight Tab Includes Search Bar and Options for Flight
 
-@FlightFilter
+@verification
 Feature: Flight tabs
 
   Background:
     Given The user navigate to the baseURL
     And The user click on the Booking Link
-
+  @verificationmessage
   Scenario:Verification of Flights Home Page tabs
     When The user click on the Flight Tab
     Then The user should see "Find your next flight" message
@@ -38,6 +38,6 @@ Feature: Flight tabs
     And the user should see that just round way on the tickets
     Examples:
       | departure country | arrival country | depature date | return date | adult number | children number |
-      | USA               | Spain           | 7             | 12          | 20           | 4               |
+      | Canada            | Spain           | 7             | 12          | 20           | 4               |
       | USA               | Spain           | 7             | 12          | 20           | 4               |
       | Australia         | United Kingdom  | 8             | 4           | 100          | 100             |

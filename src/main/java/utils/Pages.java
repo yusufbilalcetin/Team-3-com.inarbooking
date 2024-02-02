@@ -4,9 +4,15 @@ import lombok.Data;
 import pages.HomePage;
 import pages.carRentals.CarRentalDetails_Page;
 import pages.carRentals.YourDeal_Page;
+import pages.flights.FlightTabVerification;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.*;
 import pages.carRentals.carRentalsS.*;
+import pages.headerSection.FlightTab;
+import pages.headerSection.HotelTab;
+
+import pages.headerSection.BookingHomePage;
+
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
 import pages.stays.*;
@@ -28,6 +34,9 @@ public class Pages {
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
 
+	private CarRentalDetails_Page carRentalDetailsPage;
+
+
 	private StaysHomePage staysHomePage;
 
 	private HotelFilterPage hotelFilterPage;
@@ -45,7 +54,6 @@ public class Pages {
 	private FlightTabVerification flightTabVerification;
 	private CarRentalsTab carRentalsTab;
 
-	private CarRentalDetails_Page carRentalDetailsPage;
 	private CarRentalDetailss_Page carRentalDetailssPage;
 
 
@@ -68,6 +76,7 @@ public class Pages {
 
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 
+		carRentalDetailsPage = new CarRentalDetails_Page();
 		yourDealPage = new YourDeal_Page();
 
 		flightTabVerification = new FlightTabVerification();
@@ -120,6 +129,10 @@ public class Pages {
 		return flightsFilterAndListPage;
 	}
 
+	public CarRentalDetails_Page getCarRentalDetailsPage() {
+		return carRentalDetailsPage;
+	}
+
 
 	public StaysHomePage getStaysHomePage() {
 		return staysHomePage;
@@ -153,9 +166,7 @@ public class Pages {
 		return carRentalsTab;
 	}
 
-	public CarRentalDetails_Page getCarRentalDetailsPage() {
-		return carRentalDetailsPage;
-	}
+
 	public CarRentalDetailss_Page getCarRentalDetailssPage() {
 		return carRentalDetailssPage;
 	}
