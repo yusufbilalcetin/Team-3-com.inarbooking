@@ -61,8 +61,6 @@ Feature: Flight Booking
       | Round Trip | Economy         | USA         | Canada    | Cheapest   | Main     | JohnLennon@gmail.com | 3123123123  | John | John    | Male   | 2005 | 1     | 1   | Standard Meal - $15 | 1      | John Lennon    | 1596369874125454 | 1228       | 864       |
 
 
-  @verification
-  Feature: Flight tabs
 
   @verificationmessage
   Scenario:Verification of Flights Home Page tabs
