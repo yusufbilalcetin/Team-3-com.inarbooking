@@ -5,14 +5,17 @@ import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import stepDefinitions.BaseStep;
+import utils.BrowserUtils;
 
 public class FlightFiltering_StepDefs extends BaseStep {
 
 	public static final Logger LOGGER = LogManager.getLogger(FlightTab_StepDefs.class);
 
 	@When("The user click on the Flight Tab")
-	public void i_click_on_the_flight_tab() {
-		PAGES.getFlightTab().chooseOneWay();
+	public void the_user_click_on_the_flight_tab() {
+		PAGES.getFlightsFilterAndListPage().clickOnFlightsTab();
+		BrowserUtils.wait(3);
+		LOGGER.info("I clicked on the Flight Tab");
 	}
 
 	@When("The user selected {string} button")

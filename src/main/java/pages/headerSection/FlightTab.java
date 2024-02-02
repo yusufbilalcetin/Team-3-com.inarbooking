@@ -15,6 +15,7 @@ public class FlightTab extends BasePage {
 	@FindBy(css = ".me-3")
 	private List<WebElement> flightType;
 
+
 	@FindBy(css = ".headerSearchInput")
 	private List<WebElement> searchBarInputFields;
 

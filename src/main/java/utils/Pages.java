@@ -4,9 +4,15 @@ import lombok.Data;
 import pages.HomePage;
 import pages.carRentals.CarRentalDetails_Page;
 import pages.carRentals.YourDeal_Page;
+
 import pages.flights.*;
+
+import pages.flights.FlightTabVerification;
+import pages.flights.Flights_FilterAndList_Page;
+import pages.headerSection.*;
+import pages.carRentals.carRentalsS.*;
+
 import pages.headerSection.FlightTab;
-import pages.headerSection.FlightTabVerification;
 import pages.headerSection.HotelTab;
 
 import pages.headerSection.BookingHomePage;
@@ -50,7 +56,16 @@ public class Pages {
 	private YourDeal_Page yourDealPage;
 
 	private FlightTabVerification flightTabVerification;
+	private CarRentalsTab carRentalsTab;
 
+	private CarRentalDetailss_Page carRentalDetailssPage;
+
+
+	private CarRentalBilling_Page carRentalBillingPage;
+
+	private CarRentalYourDeal_Page carRentalYourDealPage;
+
+	private CarRentalConfirmation_Page carRentalConfirmationPage;
 
 	private Flights_Page flightsPage;
 
@@ -94,6 +109,13 @@ public class Pages {
 
 		finalInfoPage = new FinalInfoPage();
 		checkoutPage = new CheckoutPage();
+		carRentalsTab = new CarRentalsTab();
+		carRentalConfirmationPage = new CarRentalConfirmation_Page();
+		carRentalBillingPage = new CarRentalBilling_Page();
+		carRentalYourDealPage = new CarRentalYourDeal_Page();
+		carRentalDetailsPage = new CarRentalDetails_Page();
+		carRentalDetailssPage = new CarRentalDetailss_Page();
+
 
 		flightsPage = new Flights_Page();
 
@@ -169,6 +191,26 @@ public class Pages {
 	public FlightTabVerification getFlightTabVerification() {
 		return flightTabVerification;
 
+	}
+	public CarRentalsTab getCarRentalsTab() {
+		return carRentalsTab;
+	}
+
+
+	public CarRentalDetailss_Page getCarRentalDetailssPage() {
+		return carRentalDetailssPage;
+	}
+
+	public CarRentalBilling_Page getCarRentalBillingPage() {
+		return carRentalBillingPage;
+	}
+
+	public CarRentalYourDeal_Page getCarRentalYourDealPage() {
+		return carRentalYourDealPage;
+	}
+
+	public CarRentalConfirmation_Page getCarRentalConfirmationPage() {
+		return carRentalConfirmationPage;
 	}
 
 	public Flights_Page getFlightsPage() {

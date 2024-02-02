@@ -70,12 +70,16 @@
 
 Feature: Flight Booking
 
+
+
+
   Background:
     Given The user navigate to the baseURL
     And The user click on the Booking Link
 
 
   Scenario Outline: Validate that the User buys the flight ticket successfully
+
 
     When The user click on the Flight Tab
     And The user selected "<tripType>" button
@@ -137,3 +141,8 @@ Feature: Flight Booking
 
 
 
+
+      | departure country | arrival country | depature date | return date | adult number | children number |
+      | Canada            | Spain           | 7             | 12          | 20           | 4               |
+      | USA               | Spain           | 7             | 12          | 20           | 4               |
+      | Australia         | United Kingdom  | 8             | 4           | 100          | 100             |
