@@ -44,9 +44,6 @@ public class CarRentalsTab extends BasePage {
 		selectDropHour(drop);
 	}
 
-
-
-
 	public void enterLocationNameToTextField(String str) {
 		pickupLocationTextField.sendKeys(str);
 	}
@@ -67,8 +64,6 @@ public class CarRentalsTab extends BasePage {
 		pickupAndDropDates.get(1).sendKeys(dropoff);
 	}
 
-
-
 	public void selectPickupHour(String hour) {
 		Select select = new Select(pickupAndDropHours.get(0));
 		select.selectByVisibleText(hour);
@@ -83,4 +78,5 @@ public class CarRentalsTab extends BasePage {
 		selectPickupHour(pickup);
 		selectDropHour(drop);
 	}
+
 }
