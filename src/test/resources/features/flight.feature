@@ -79,6 +79,7 @@ Feature: Flight Booking
     And The user choose the adult number as "<adult number>" and the children number as "<children number>"
     And The user clicks on the search flights button
 
+
     Then The user should see "Find your next flight" message
     And The user should see that just list of "<departure country>" and "<arrival country>" are displayed
     And the user should see that just list of "<departure date>" is displayed
