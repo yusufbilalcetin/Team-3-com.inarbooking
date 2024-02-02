@@ -11,6 +11,7 @@ import pages.headerSection.BookingHomePage;
 
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
+import pages.stays.*;
 
 @Data
 public class Pages {
@@ -31,6 +32,18 @@ public class Pages {
 
 	private CarRentalDetails_Page carRentalDetailsPage;
 
+	private StaysHomePage staysHomePage;
+
+	private HotelFilterPage hotelFilterPage;
+
+	private HotelDetailPage hotelDetailPage;
+
+	private HotelYourDetailsPage yourDetailsPage;
+
+	private FinalInfoPage finalInfoPage;
+
+	private CheckoutPage checkoutPage;
+
 	public Pages() {
 		homePage = new HomePage();
 
@@ -45,6 +58,17 @@ public class Pages {
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 
 		carRentalDetailsPage = new CarRentalDetails_Page();
+
+		staysHomePage = new StaysHomePage();
+
+		hotelFilterPage = new HotelFilterPage();
+
+		hotelDetailPage = new HotelDetailPage();
+
+		yourDetailsPage = new HotelYourDetailsPage();
+
+		finalInfoPage = new FinalInfoPage();
+		checkoutPage = new CheckoutPage();
 
 	}
 
@@ -76,6 +100,28 @@ public class Pages {
 		return flightsFilterAndListPage;
 	}
 
-	public CarRentalDetails_Page getCarRentalDetailsPage() { return carRentalDetailsPage; }
+	public CarRentalDetails_Page getCarRentalDetailsPage() {
+		return carRentalDetailsPage;
+	}
+
+	public StaysHomePage getStaysHomePage() {
+		return staysHomePage;
+	}
+
+	public HotelFilterPage getHotelFilterPage() {
+		return hotelFilterPage;
+	}
+
+	public HotelDetailPage getHotelDetailPage() {
+		return hotelDetailPage;
+	}
+
+	public HotelYourDetailsPage getHotelYourDetailsPage() {
+		return yourDetailsPage;
+	}
+
+	public FinalInfoPage getFinalInfoPage() {
+		return finalInfoPage;
+	}
 
 }

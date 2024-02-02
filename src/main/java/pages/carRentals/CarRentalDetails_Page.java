@@ -133,29 +133,29 @@ public class CarRentalDetails_Page extends BasePage {
 	}
 
 	public boolean isSelectedCarImageSameWith(String carType) {
-		return selectedCarImage.findElement(By.className("tab-item-car-title"))
-				.getText().equalsIgnoreCase(carType);
+		return selectedCarImage.findElement(By.className("tab-item-car-title")).getText().equalsIgnoreCase(carType);
 	}
 
 	public boolean isSelectedCarCategorySameWith(String carType) {
 		return checkBoxes.stream()
-				.filter(element -> element.getAttribute("value")
-						.equalsIgnoreCase(carType)).findFirst()
-				.map(WebElement::isSelected).orElse(false);
+			.filter(element -> element.getAttribute("value").equalsIgnoreCase(carType))
+			.findFirst()
+			.map(WebElement::isSelected)
+			.orElse(false);
 
 	}
 
 	public boolean isCarCardsSpecsCorrect(String spec, String expected) {
 
-        return switch (spec) {
-            case "size" -> carCards.stream().allMatch(card ->
-                    card.findElement(By.xpath(".//div/div[4]/span")).getText().equalsIgnoreCase(expected)
-            );
-            case "transmission" -> carCards.stream().allMatch(card ->
-                    card.findElement(By.xpath(".//div/div[2]/span")).getText().equalsIgnoreCase(expected)
-            );
-            default -> throw new IllegalArgumentException("Invalid specification: " + spec);
-        };
+		return switch (spec) {
+			case "size" -> carCards.stream()
+				.allMatch(
+						card -> card.findElement(By.xpath(".//div/div[4]/span")).getText().equalsIgnoreCase(expected));
+			case "transmission" -> carCards.stream()
+				.allMatch(
+						card -> card.findElement(By.xpath(".//div/div[2]/span")).getText().equalsIgnoreCase(expected));
+			default -> throw new IllegalArgumentException("Invalid specification: " + spec);
+		};
 	}
 
 }

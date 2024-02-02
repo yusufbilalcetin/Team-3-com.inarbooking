@@ -47,7 +47,6 @@ public class BookingHomePage extends BasePage {
 	@FindBy(css = ".modal-footer > button")
 	private WebElement modalCloseButton;
 
-
 	public void clickOnTabs(String tabName) {
 		switch (tabName) {
 			case "Stays" -> clickOnStaysTab();
@@ -104,7 +103,6 @@ public class BookingHomePage extends BasePage {
 				element.click();
 			});
 	}
-
 
 	public void enterSubscribeEmail(String email) {
 		emailInputField.sendKeys(email);
