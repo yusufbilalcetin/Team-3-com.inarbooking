@@ -1,5 +1,7 @@
 package pages.carRentals;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,8 @@ import pages.BasePage;
 import java.util.List;
 
 public class CarRentalDetails_Page extends BasePage {
+
+	public static final Logger LOGGER = LogManager.getLogger(CarRentalDetails_Page.class);
 
 	@FindBy(css = ".text-left")
 	private WebElement headerText;
@@ -104,6 +108,7 @@ public class CarRentalDetails_Page extends BasePage {
 	}
 
 	public void clickOnSearchButton() {
+		actions.scrollToElement(searchButton).perform();
 		searchButton.click();
 	}
 
@@ -125,7 +130,13 @@ public class CarRentalDetails_Page extends BasePage {
 	}
 
 	public void clickOnDesiredCarFromListedCars(int index) {
-		viewDetailsButtonsOfListedCars.get(index).click();
+		if (!viewDetailsButtonsOfListedCars.isEmpty()) {
+			actions.scrollToElement(viewDetailsButtonsOfListedCars.get(index)).perform();
+			viewDetailsButtonsOfListedCars.get(index).click();
+		}
+		else {
+			LOGGER.debug("No listed car!");
+		}
 	}
 
 	public String getHeaderText() {
@@ -145,6 +156,14 @@ public class CarRentalDetails_Page extends BasePage {
 
 	}
 
+
+	public void selectCarCategory(String carType) {
+		checkBoxes.stream()
+			.filter(element -> element.getAttribute("value").equalsIgnoreCase(carType))
+			.findFirst()
+			.ifPresent(WebElement::click);
+	}
+
 	public boolean isCarCardsSpecsCorrect(String spec, String expected) {
 
 		return switch (spec) {
@@ -156,6 +175,20 @@ public class CarRentalDetails_Page extends BasePage {
 						card -> card.findElement(By.xpath(".//div/div[2]/span")).getText().equalsIgnoreCase(expected));
 			default -> throw new IllegalArgumentException("Invalid specification: " + spec);
 		};
+
+
+	}
+
+	public String getPickupLocation() {
+		actions.scrollToElement(datesAndLocationBoxes.get(2)).perform();
+		return datesAndLocationBoxes.get(2).getAttribute("value");
+	}
+
+	public void enterPickupLocation(String location) {
+		actions.scrollToElement(datesAndLocationBoxes.get(2)).perform();
+		datesAndLocationBoxes.get(2).clear();
+		datesAndLocationBoxes.get(2).sendKeys(location);
+
 	}
 
 }

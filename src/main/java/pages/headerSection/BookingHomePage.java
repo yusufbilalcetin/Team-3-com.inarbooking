@@ -75,6 +75,10 @@ public class BookingHomePage extends BasePage {
 		return headerButton.getText();
 	}
 
+	public void clickOnHeaderButton() {
+		headerButton.click();
+	}
+
 	public void clickOnBookFlightButton(int index) {
 		actions.scrollToElement(bookFlightButtons.get(index - 1)).click().build().perform();
 	}

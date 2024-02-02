@@ -3,8 +3,10 @@ package utils;
 import lombok.Data;
 import pages.HomePage;
 import pages.carRentals.CarRentalDetails_Page;
+import pages.carRentals.YourDeal_Page;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.FlightTab;
+import pages.headerSection.FlightTabVerification;
 import pages.headerSection.HotelTab;
 
 import pages.headerSection.BookingHomePage;
@@ -32,6 +34,7 @@ public class Pages {
 
 	private CarRentalDetails_Page carRentalDetailsPage;
 
+
 	private StaysHomePage staysHomePage;
 
 	private HotelFilterPage hotelFilterPage;
@@ -43,6 +46,11 @@ public class Pages {
 	private FinalInfoPage finalInfoPage;
 
 	private CheckoutPage checkoutPage;
+
+	private YourDeal_Page yourDealPage;
+
+	private FlightTabVerification flightTabVerification;
+
 
 	public Pages() {
 		homePage = new HomePage();
@@ -58,6 +66,9 @@ public class Pages {
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 
 		carRentalDetailsPage = new CarRentalDetails_Page();
+		yourDealPage = new YourDeal_Page();
+
+		flightTabVerification = new FlightTabVerification();
 
 		staysHomePage = new StaysHomePage();
 
@@ -104,6 +115,7 @@ public class Pages {
 		return carRentalDetailsPage;
 	}
 
+
 	public StaysHomePage getStaysHomePage() {
 		return staysHomePage;
 	}
@@ -122,6 +134,14 @@ public class Pages {
 
 	public FinalInfoPage getFinalInfoPage() {
 		return finalInfoPage;
+
+	public YourDeal_Page getYourDealPage() {
+		return yourDealPage;
+	}
+
+	public FlightTabVerification getFlightTabVerification() {
+		return flightTabVerification;
+
 	}
 
 }
