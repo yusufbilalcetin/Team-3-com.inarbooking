@@ -134,6 +134,7 @@ public class Pages {
 
 	public FinalInfoPage getFinalInfoPage() {
 		return finalInfoPage;
+	}
 
 	public YourDeal_Page getYourDealPage() {
 		return yourDealPage;
