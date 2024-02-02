@@ -1,18 +1,21 @@
 package pages.carRentals;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
+import io.cucumber.java.sl.In;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
+import utils.BrowserUtils;
 
+import javax.swing.plaf.PanelUI;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CarRentalDetails_Page extends BasePage {
-
-	public static final Logger LOGGER = LogManager.getLogger(CarRentalDetails_Page.class);
 
 	@FindBy(css = ".text-left")
 	private WebElement headerText;
@@ -29,22 +32,25 @@ public class CarRentalDetails_Page extends BasePage {
 	@FindBy(css = "input[value*=\"0-\"]")
 	private List<WebElement> priceRangeCheckboxes;
 
-	@FindBy(xpath = "//label[text()='Car Specs:']/following-sibling::div/div")
+	@FindBy(xpath = "//label[text()='Car Specs:']/following-sibling::div/div/input")
 	private List<WebElement> carSpecificationsCheckboxes;
 
-	@FindBy(xpath = "//label[text()='Transmission:']/following-sibling::div/div")
+	@FindBy(xpath = "//label[text()='Transmission:']/following-sibling::div/div/input")
 	private List<WebElement> transmissionCheckboxes;
 
-	@FindBy(xpath = "//label[text()='Car Category:']/following-sibling::div/div")
+	@FindBy(xpath = "//label[text()='Car Category:']/following-sibling::div/div/input")
 	private List<WebElement> carCategoryCheckboxes;
+
+	@FindBy(xpath = "//label[text()='Car Category:']/following-sibling::div/div/span")
+	private List<WebElement> carCategoryCheckboxesText;
 
 	@FindBy(css = ".tab-item-car")
 	private List<WebElement> carCategoryImages;
 
-	@FindBy(css = ".active-tb")
-	private WebElement selectedCarImage;
+	@FindBy(css = ".tab-item-car-title")
+	private List<WebElement> carCategoryImagesText;
 
-	@FindBy(css = "div[class='search-btn-car-rental'] button")
+	@FindBy(xpath = "//button[text()='Search']")
 	private WebElement searchButton;
 
 	@FindBy(css = ".me-4.fs-5")
@@ -52,6 +58,9 @@ public class CarRentalDetails_Page extends BasePage {
 
 	@FindBy(css = ".me-4.fs-5 ~ button")
 	private WebElement priceHighestSortButton;
+
+	@FindBy(css = ".w-10")
+	private List<WebElement> listedCarsFrames;
 
 	@FindBy(css = ".mb-0")
 	private List<WebElement> pricesOfListedCars;
@@ -74,25 +83,54 @@ public class CarRentalDetails_Page extends BasePage {
 	private WebElement subscribeButton;
 
 	@FindBy(css = ".btn-blue.w-100")
-	private List<WebElement> viewDetailsButtonsOfListedCars;
+	private List<WebElement> viewDealButtonsOfListedCars;
 
-	@FindBy(xpath = "//input[@type='checkbox']")
-	private List<WebElement> checkBoxes;
-
-	@FindBy(css = ".carRentalItemDetails")
-	private List<WebElement> carCards;
+	public String getHeaderText() {
+		return headerText.getText();
+	}
 
 	public void selectAge(int age) {
 		Select select = new Select(driverAgeSelectMenu);
 		select.selectByVisibleText("" + age);
 	}
 
+	public boolean isAgeBetween30_65Checked() {
+		return isAgeBetween30_65Checkbox.isSelected();
+	}
+
+	public String getDatesAndLocationBoxes(int index) {
+		if (index != 2) {
+			return convertDate(datesAndLocationBoxes.get(index).getAttribute("value"));
+		}
+		return datesAndLocationBoxes.get(index).getAttribute("value");
+	}
+
+	public String convertDate(String date) {
+		DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+		LocalDate dateObject = LocalDate.parse(date, inputFormatter);
+		return dateObject.format(outputFormatter);
+	}
+
 	public void selectPriceRange(int index) {
 		priceRangeCheckboxes.get(index).click();
 	}
 
+	public void selectAllPriceRanges() {
+		BrowserUtils.scrollDownWithPageDownButton(1);
+		for (int i = 0; i < priceRangeCheckboxes.size(); i++) {
+			selectPriceRange(i);
+		}
+	}
+
 	public void selectCarSpecs(int index) {
 		carSpecificationsCheckboxes.get(index).click();
+	}
+
+	public void selectCarSpecsRandomly() {
+		for (int i = 0; i < 5; i++) {
+			selectCarSpecs((int) (Math.random() * 9));
+		}
 	}
 
 	public void selectTransmission(int index) {
@@ -103,8 +141,27 @@ public class CarRentalDetails_Page extends BasePage {
 		carCategoryCheckboxes.get(index).click();
 	}
 
+	public void selectCarCategory(String category) {
+		BrowserUtils.scrollDownWithPageDownButton(1);
+		for (int i = 0; i < carCategoryCheckboxesText.size(); i++) {
+			if (carCategoryCheckboxesText.get(i).getText().equals(category)) {
+				selectCarCategory(i);
+				break;
+			}
+		}
+	}
+
 	public void selectCarCategoryFromImages(int index) {
 		carCategoryImages.get(index).click();
+	}
+
+	public boolean isTheCarImageSelected(String category) {
+		for (int i = 0; i < carCategoryImages.size(); i++) {
+			if (carCategoryImagesText.get(i).getText().equals(category)) {
+				return carCategoryImages.get(i).getAttribute("class").contains("active-tb");
+			}
+		}
+		return true;
 	}
 
 	public void clickOnSearchButton() {
@@ -112,12 +169,44 @@ public class CarRentalDetails_Page extends BasePage {
 		searchButton.click();
 	}
 
+	public boolean isThereAvailableCars() {
+		return !listedCarsFrames.isEmpty();
+	}
+	public int numberOfCarsAvailable(){
+		return listedCarsFrames.size();
+	}
+
 	public void clickOnSortHighestPrice() {
+		BrowserUtils.scrollUpWithPageUpButton(2);
 		priceHighestSortButton.click();
 	}
 
 	public void clickOnSortLowestPrice() {
+		BrowserUtils.scrollUpWithPageUpButton(2);
 		priceLowestSortButton.click();
+	}
+
+	public List<Integer> getPriceList() {
+		List<Integer> priceList = new ArrayList<>();
+		for (WebElement pricesOfListedCar : pricesOfListedCars) {
+			priceList.add((int) Double.parseDouble(pricesOfListedCar.getText().substring(1)));
+		}
+		return priceList;
+	}
+
+	public boolean areCarsSortedHighestPrice() {
+		List<Integer> priceList = getPriceList();
+		List<Integer> list = new ArrayList<>(priceList);
+		Collections.sort(list);
+		return list.equals(priceList);
+	}
+
+	public boolean areCarsSortedLowestPrice() {
+		List<Integer> priceList = getPriceList();
+		List<Integer> list = new ArrayList<>(priceList);
+		Collections.sort(list);
+		Collections.reverse(list);
+		return list.equals(priceList);
 	}
 
 	public void enterEmailTextField(String email) {
@@ -130,53 +219,9 @@ public class CarRentalDetails_Page extends BasePage {
 	}
 
 	public void clickOnDesiredCarFromListedCars(int index) {
-		if (!viewDetailsButtonsOfListedCars.isEmpty()) {
-			actions.scrollToElement(viewDetailsButtonsOfListedCars.get(index)).perform();
-			viewDetailsButtonsOfListedCars.get(index).click();
-		} else {
-			LOGGER.debug("No listed car!");
-		}
-	}
-
-	public String getHeaderText() {
-		return headerText.getText();
-	}
-
-	public boolean isSelectedCarImageSameWith(String carType) {
-		return selectedCarImage.findElement(By.className("tab-item-car-title"))
-				.getText().equalsIgnoreCase(carType);
-	}
-
-	public boolean isSelectedCarCategorySameWith(String carType) {
-		return checkBoxes.stream()
-				.filter(element -> element.getAttribute("value")
-						.equalsIgnoreCase(carType)).findFirst()
-				.map(WebElement::isSelected).orElse(false);
-
-	}
-
-	public boolean isCarCardsSpecsCorrect(String spec, String expected) {
-
-        return switch (spec) {
-            case "size" -> carCards.stream().allMatch(card ->
-                    card.findElement(By.xpath(".//div/div[4]/span")).getText().equalsIgnoreCase(expected)
-            );
-            case "transmission" -> carCards.stream().allMatch(card ->
-                    card.findElement(By.xpath(".//div/div[2]/span")).getText().equalsIgnoreCase(expected)
-            );
-            default -> throw new IllegalArgumentException("Invalid specification: " + spec);
-        };
-	}
-
-	public String getPickupLocation() {
-		actions.scrollToElement(datesAndLocationBoxes.get(2)).perform();
-		return datesAndLocationBoxes.get(2).getAttribute("value");
-	}
-
-	public void enterPickupLocation(String location) {
-		actions.scrollToElement(datesAndLocationBoxes.get(2)).perform();
-		datesAndLocationBoxes.get(2).clear();
-		datesAndLocationBoxes.get(2).sendKeys(location);
+		BrowserUtils.scrollDownWithPageDownButton(1);
+		viewDealButtonsOfListedCars.get(index).click();
+		BrowserUtils.wait(1);
 	}
 
 }

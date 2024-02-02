@@ -2,7 +2,7 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 import pages.carRentals.CarRentalDetails_Page;
-import pages.carRentals.YourDeal_Page;
+import pages.carRentals.CarRentalYourDeal_Page;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.BookingHomePage;
 import pages.hotels.Hotels_FilterAndList_Page;
@@ -21,7 +21,7 @@ public class BaseStep {
 
 	protected final CarRentalDetails_Page CARSFILTER = PAGES.getCarRentalDetailsPage();
 
-	protected final YourDeal_Page CARDEALPAGE = PAGES.getYourDealPage();
+	protected final CarRentalYourDeal_Page CARDEALPAGE = PAGES.getCarRentalYourDealPage();
 
 	protected final WebDriver DRIVER = DriverManager.getDriver();
 

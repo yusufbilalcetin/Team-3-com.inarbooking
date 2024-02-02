@@ -1,14 +1,17 @@
 package pages.carRentals;
 
-import io.cucumber.java.eo.Se;
-import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import pages.BasePage;
+import utils.BrowserUtils;
 
 import java.util.List;
 
-public class Billing_Page {
+public class CarRentalBilling_Page extends BasePage {
+
+	@FindBy(css = ".mb-3.fw-bold")
+	private WebElement frameName;
 
 	@FindBy(id = "firstName")
 	private WebElement nameTextField;
@@ -19,7 +22,7 @@ public class Billing_Page {
 	@FindBy(css = "select[name='phoneCountry']")
 	private WebElement phoneCountryCode;
 
-	@FindBy(css = "select[name='phone']")
+	@FindBy(css = ".p-3.fs-4.w-100")
 	private WebElement phoneTextField;
 
 	@FindBy(id = "country")
@@ -58,14 +61,16 @@ public class Billing_Page {
 	@FindBy(css = ".btn-blue")
 	private WebElement bookNowButton;
 
+	public String getFrameName() {
+		return frameName.getText();
+	}
+
 	public void setName(String name) {
-		nameTextField.clear();
 		nameTextField.sendKeys(name);
 	}
 
 	public void setLastName(String lastName) {
-		lastNameTextField.clear();
-		lastNameTextField.sendKeys();
+		lastNameTextField.sendKeys(lastName);
 	}
 
 	public void selectCountryCode(int countryCodeIndex) {
@@ -74,27 +79,22 @@ public class Billing_Page {
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		phoneTextField.clear();
 		phoneTextField.sendKeys(phoneNumber);
 	}
 
 	public void setCountry(String country) {
-		countryTextField.clear();
 		countryTextField.sendKeys(country);
 	}
 
 	public void setAddress(String address) {
-		addressTextField.clear();
 		addressTextField.sendKeys(address);
 	}
 
 	public void setCity(String city) {
-		cityTextField.clear();
 		cityTextField.sendKeys(city);
 	}
 
 	public void setPostalCode(String postalCode) {
-		postalCodeTextField.clear();
 		postalCodeTextField.sendKeys(postalCode);
 	}
 
@@ -104,6 +104,7 @@ public class Billing_Page {
 
 	public void setBillingAddressInformation(String name, String lastName, int countryCodeIndex, String phoneNumber,
 			String country, String address, String city, String postalCode, int isBusiness) {
+		// BrowserUtils.scrollDownWithPageDown();
 		setName(name);
 		setLastName(lastName);
 		selectCountryCode(countryCodeIndex);
@@ -113,25 +114,22 @@ public class Billing_Page {
 		setCity(city);
 		setPostalCode(postalCode);
 		setBusinessOrNot(isBusiness);
+		BrowserUtils.wait(5);
 	}
 
 	public void setCardholderName(String name) {
-		cardholderNameTextField.clear();
 		cardholderNameTextField.sendKeys(name);
 	}
 
 	public void setCardNumber(String cardNumber) {
-		cardNumberField.clear();
 		cardNumberField.sendKeys(cardNumber);
 	}
 
 	public void setExpirationDate(String expirationDate) {
-		expirationDateField.clear();
 		expirationDateField.sendKeys(expirationDate);
 	}
 
 	public void setCvvCode(String cvvCode) {
-		cvvCodeField.clear();
 		cvvCodeField.sendKeys(cvvCode);
 	}
 
@@ -140,6 +138,7 @@ public class Billing_Page {
 		setCardNumber(cardNumber);
 		setExpirationDate(expirationDate);
 		setCvvCode(cvvCode);
+		BrowserUtils.scrollDownWithPageDown();
 	}
 
 	public void clickOnBackButton() {
@@ -147,6 +146,8 @@ public class Billing_Page {
 	}
 
 	public void clickOnBookNowButton() {
+		BrowserUtils.scrollUpWithPageUpButton(1);
+		BrowserUtils.scrollDownWithPageDown();
 		bookNowButton.click();
 	}
 

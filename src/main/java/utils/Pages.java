@@ -1,10 +1,14 @@
 package utils;
 
 import lombok.Data;
+import org.checkerframework.checker.units.qual.C;
 import pages.HomePage;
+import pages.carRentals.CarRentalBilling_Page;
+import pages.carRentals.CarRentalConfirmation_Page;
 import pages.carRentals.CarRentalDetails_Page;
-import pages.carRentals.YourDeal_Page;
+import pages.carRentals.CarRentalYourDeal_Page;
 import pages.flights.Flights_FilterAndList_Page;
+import pages.headerSection.CarRentalsTab;
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
 
@@ -30,26 +34,29 @@ public class Pages {
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
 
+	private CarRentalsTab carRentalsTab;
+
 	private CarRentalDetails_Page carRentalDetailsPage;
 
-	private YourDeal_Page yourDealPage;
+	private CarRentalBilling_Page carRentalBillingPage;
+
+	private CarRentalYourDeal_Page carRentalYourDealPage;
+
+	private CarRentalConfirmation_Page carRentalConfirmationPage;
 
 	public Pages() {
 		homePage = new HomePage();
-
 		hotelTab = new HotelTab();
 		flightTab = new FlightTab();
-
 		hotel_detailPage = new Hotel_DetailPage();
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
-
 		bookingHomePage = new BookingHomePage();
-
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
-
+		carRentalsTab = new CarRentalsTab();
+		carRentalConfirmationPage = new CarRentalConfirmation_Page();
+		carRentalBillingPage = new CarRentalBilling_Page();
+		carRentalYourDealPage = new CarRentalYourDeal_Page();
 		carRentalDetailsPage = new CarRentalDetails_Page();
-		yourDealPage = new  YourDeal_Page();
-
 	}
 
 	public HomePage getHomePage() {
@@ -80,8 +87,24 @@ public class Pages {
 		return flightsFilterAndListPage;
 	}
 
-	public CarRentalDetails_Page getCarRentalDetailsPage() { return carRentalDetailsPage; }
+	public CarRentalsTab getCarRentalsTab() {
+		return carRentalsTab;
+	}
 
-	public YourDeal_Page getYourDealPage() { return yourDealPage; }
+	public CarRentalDetails_Page getCarRentalDetailsPage() {
+		return carRentalDetailsPage;
+	}
+
+	public CarRentalBilling_Page getCarRentalBillingPage() {
+		return carRentalBillingPage;
+	}
+
+	public CarRentalYourDeal_Page getCarRentalYourDealPage() {
+		return carRentalYourDealPage;
+	}
+
+	public CarRentalConfirmation_Page getCarRentalConfirmationPage() {
+		return carRentalConfirmationPage;
+	}
 
 }

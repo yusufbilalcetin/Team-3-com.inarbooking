@@ -3,12 +3,13 @@ package pages.headerSection;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import pages.BasePage;
 
 import java.util.List;
 
-public class CarRentalsTab {
+public class CarRentalsTab extends BasePage {
 
-	@FindBy(css = "input.h-100")
+	@FindBy(css = ".headerSearchInput")
 	private WebElement pickupLocationTextField;
 
 	@FindBy(css = "div.fs-5")
@@ -24,7 +25,6 @@ public class CarRentalsTab {
 	private WebElement searchCarsButton;
 
 	public void enterLocationNameToTextField(String str) {
-		pickupLocationTextField.clear();
 		pickupLocationTextField.sendKeys(str);
 	}
 
@@ -37,12 +37,10 @@ public class CarRentalsTab {
 	}
 
 	public void selectPickupDate(String pickup) {
-		pickupAndDropDates.get(0).clear();
 		pickupAndDropDates.get(0).sendKeys(pickup);
 	}
 
 	public void selectDropoffDate(String dropoff) {
-		pickupAndDropDates.get(1).clear();
 		pickupAndDropDates.get(1).sendKeys(dropoff);
 	}
 
@@ -51,17 +49,17 @@ public class CarRentalsTab {
 		selectDropoffDate(dropoff);
 	}
 
-	public void selectPickupHour(int index) {
+	public void selectPickupHour(String hour) {
 		Select select = new Select(pickupAndDropHours.get(0));
-		select.selectByIndex(index);
+		select.selectByVisibleText(hour);
 	}
 
-	public void selectDropHour(int index) {
+	public void selectDropHour(String hour) {
 		Select select = new Select(pickupAndDropHours.get(1));
-		select.selectByIndex(index);
+		select.selectByVisibleText(hour);
 	}
 
-	public void selectHours(int pickup, int drop) {
+	public void selectHours(String pickup, String drop) {
 		selectPickupHour(pickup);
 		selectDropHour(drop);
 	}
