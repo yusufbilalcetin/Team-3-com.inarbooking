@@ -40,7 +40,6 @@ public class Pages {
 
 	private CarRentalDetails_Page carRentalDetailsPage;
 
-
 	private StaysHomePage staysHomePage;
 
 	private HotelFilterPage hotelFilterPage;
@@ -56,10 +55,10 @@ public class Pages {
 	private YourDeal_Page yourDealPage;
 
 	private FlightTabVerification flightTabVerification;
+
 	private CarRentalsTab carRentalsTab;
 
 	private CarRentalDetailss_Page carRentalDetailssPage;
-
 
 	private CarRentalBilling_Page carRentalBillingPage;
 
@@ -116,7 +115,6 @@ public class Pages {
 		carRentalDetailsPage = new CarRentalDetails_Page();
 		carRentalDetailssPage = new CarRentalDetailss_Page();
 
-
 		flightsPage = new Flights_Page();
 
 		chooseYourFarePage = new ChooseYourFare_Page();
@@ -163,7 +161,6 @@ public class Pages {
 		return carRentalDetailsPage;
 	}
 
-
 	public StaysHomePage getStaysHomePage() {
 		return staysHomePage;
 	}
@@ -192,10 +189,10 @@ public class Pages {
 		return flightTabVerification;
 
 	}
+
 	public CarRentalsTab getCarRentalsTab() {
 		return carRentalsTab;
 	}
-
 
 	public CarRentalDetailss_Page getCarRentalDetailssPage() {
 		return carRentalDetailssPage;
