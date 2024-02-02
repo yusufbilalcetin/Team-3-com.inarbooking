@@ -3,10 +3,11 @@ package pages.headerSection;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import pages.BasePage;
 
 import java.util.List;
 
-public class CarRentalsTab {
+public class CarRentalsTab extends BasePage {
 
 	@FindBy(css = "input.h-100")
 	private WebElement pickupLocationTextField;
@@ -22,29 +23,6 @@ public class CarRentalsTab {
 
 	@FindBy(css = ".headerBtn.h-100.w-100")
 	private WebElement searchCarsButton;
-
-	public void enterLocationNameToTextField(String str) {
-		pickupLocationTextField.clear();
-		pickupLocationTextField.sendKeys(str);
-	}
-
-	public void selectFromSuggestions(int index) {
-		pickupLocationSuggestionList.get(index).click();
-	}
-
-	public void clickOnSearchCarsButton() {
-		searchCarsButton.click();
-	}
-
-	public void selectPickupDate(String pickup) {
-		pickupAndDropDates.get(0).clear();
-		pickupAndDropDates.get(0).sendKeys(pickup);
-	}
-
-	public void selectDropoffDate(String dropoff) {
-		pickupAndDropDates.get(1).clear();
-		pickupAndDropDates.get(1).sendKeys(dropoff);
-	}
 
 	public void selectDates(String pickup, String dropoff) {
 		selectPickupDate(pickup);
@@ -66,4 +44,43 @@ public class CarRentalsTab {
 		selectDropHour(drop);
 	}
 
+
+
+
+	public void enterLocationNameToTextField(String str) {
+		pickupLocationTextField.sendKeys(str);
+	}
+
+	public void selectFromSuggestions(int index) {
+		pickupLocationSuggestionList.get(index).click();
+	}
+
+	public void clickOnSearchCarsButton() {
+		searchCarsButton.click();
+	}
+
+	public void selectPickupDate(String pickup) {
+		pickupAndDropDates.get(0).sendKeys(pickup);
+	}
+
+	public void selectDropoffDate(String dropoff) {
+		pickupAndDropDates.get(1).sendKeys(dropoff);
+	}
+
+
+
+	public void selectPickupHour(String hour) {
+		Select select = new Select(pickupAndDropHours.get(0));
+		select.selectByVisibleText(hour);
+	}
+
+	public void selectDropHour(String hour) {
+		Select select = new Select(pickupAndDropHours.get(1));
+		select.selectByVisibleText(hour);
+	}
+
+	public void selectHours(String pickup, String drop) {
+		selectPickupHour(pickup);
+		selectDropHour(drop);
+	}
 }

@@ -5,12 +5,8 @@ import pages.HomePage;
 import pages.carRentals.CarRentalDetails_Page;
 import pages.carRentals.YourDeal_Page;
 import pages.flights.Flights_FilterAndList_Page;
-import pages.headerSection.FlightTab;
-import pages.headerSection.FlightTabVerification;
-import pages.headerSection.HotelTab;
-
-import pages.headerSection.BookingHomePage;
-
+import pages.headerSection.*;
+import pages.carRentals.carRentalsS.*;
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
 import pages.stays.*;
@@ -32,9 +28,6 @@ public class Pages {
 
 	private Flights_FilterAndList_Page flightsFilterAndListPage;
 
-	private CarRentalDetails_Page carRentalDetailsPage;
-
-
 	private StaysHomePage staysHomePage;
 
 	private HotelFilterPage hotelFilterPage;
@@ -50,7 +43,17 @@ public class Pages {
 	private YourDeal_Page yourDealPage;
 
 	private FlightTabVerification flightTabVerification;
+	private CarRentalsTab carRentalsTab;
 
+	private CarRentalDetails_Page carRentalDetailsPage;
+	private CarRentalDetailss_Page carRentalDetailssPage;
+
+
+	private CarRentalBilling_Page carRentalBillingPage;
+
+	private CarRentalYourDeal_Page carRentalYourDealPage;
+
+	private CarRentalConfirmation_Page carRentalConfirmationPage;
 
 	public Pages() {
 		homePage = new HomePage();
@@ -65,7 +68,6 @@ public class Pages {
 
 		flightsFilterAndListPage = new Flights_FilterAndList_Page();
 
-		carRentalDetailsPage = new CarRentalDetails_Page();
 		yourDealPage = new YourDeal_Page();
 
 		flightTabVerification = new FlightTabVerification();
@@ -80,6 +82,13 @@ public class Pages {
 
 		finalInfoPage = new FinalInfoPage();
 		checkoutPage = new CheckoutPage();
+		carRentalsTab = new CarRentalsTab();
+		carRentalConfirmationPage = new CarRentalConfirmation_Page();
+		carRentalBillingPage = new CarRentalBilling_Page();
+		carRentalYourDealPage = new CarRentalYourDeal_Page();
+		carRentalDetailsPage = new CarRentalDetails_Page();
+		carRentalDetailssPage = new CarRentalDetailss_Page();
+
 
 	}
 
@@ -111,10 +120,6 @@ public class Pages {
 		return flightsFilterAndListPage;
 	}
 
-	public CarRentalDetails_Page getCarRentalDetailsPage() {
-		return carRentalDetailsPage;
-	}
-
 
 	public StaysHomePage getStaysHomePage() {
 		return staysHomePage;
@@ -143,6 +148,28 @@ public class Pages {
 	public FlightTabVerification getFlightTabVerification() {
 		return flightTabVerification;
 
+	}
+	public CarRentalsTab getCarRentalsTab() {
+		return carRentalsTab;
+	}
+
+	public CarRentalDetails_Page getCarRentalDetailsPage() {
+		return carRentalDetailsPage;
+	}
+	public CarRentalDetailss_Page getCarRentalDetailssPage() {
+		return carRentalDetailssPage;
+	}
+
+	public CarRentalBilling_Page getCarRentalBillingPage() {
+		return carRentalBillingPage;
+	}
+
+	public CarRentalYourDeal_Page getCarRentalYourDealPage() {
+		return carRentalYourDealPage;
+	}
+
+	public CarRentalConfirmation_Page getCarRentalConfirmationPage() {
+		return carRentalConfirmationPage;
 	}
 
 }
