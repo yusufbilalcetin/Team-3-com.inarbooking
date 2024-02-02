@@ -56,12 +56,10 @@ Feature: Flight Booking
 
     When the user click on Close button
     Then the user sees the HomePage
-
-
-
     Examples:
       | tripType   | ticketClassType | fromCountry | toCountry | TicketType | FareType | email                | phoneNumber | name | surname | gender | year | month | day | mealType            | extras | cardholderName | cardNumber       | expiryDate | cvvNumber |
       | Round Trip | Economy         | USA         | Canada    | Cheapest   | Main     | JohnLennon@gmail.com | 3123123123  | John | John    | Male   | 2005 | 1     | 1   | Standard Meal - $15 | 1      | John Lennon    | 1596369874125454 | 1228       | 864       |
+
 
   @verification
   Feature: Flight tabs
