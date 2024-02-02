@@ -156,7 +156,6 @@ public class CarRentalDetails_Page extends BasePage {
 
 	}
 
-
 	public void selectCarCategory(String carType) {
 		checkBoxes.stream()
 			.filter(element -> element.getAttribute("value").equalsIgnoreCase(carType))
@@ -175,7 +174,6 @@ public class CarRentalDetails_Page extends BasePage {
 						card -> card.findElement(By.xpath(".//div/div[2]/span")).getText().equalsIgnoreCase(expected));
 			default -> throw new IllegalArgumentException("Invalid specification: " + spec);
 		};
-
 
 	}
 

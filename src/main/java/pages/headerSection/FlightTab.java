@@ -12,7 +12,7 @@ public class FlightTab extends BasePage {
 	@FindBy(css = ".me-3")
 	private List<WebElement> flightType;
 
-	@FindBy(className = ".headerSearchInput")
+	@FindBy(className = "headerSearchInput")
 	private List<WebElement> searchBarInputFields;
 
 	@FindBy(css = ".headerSearch > div")

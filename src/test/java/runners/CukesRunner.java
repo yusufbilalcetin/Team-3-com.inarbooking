@@ -16,10 +16,7 @@ import org.junit.runner.RunWith;
 				"junit:target/cucumber-reports/cucumber.xml",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "rerun:target/rerun.txt" },
 
-		features = "src/test/resources/features", glue = "stepDefinitions", tags = "@stays", dryRun = false)
-
-	
-
+		features = "src/test/resources/features", glue = "stepDefinitions", tags = "@CarRentalsTab", dryRun = false)
 
 public class CukesRunner {
 
