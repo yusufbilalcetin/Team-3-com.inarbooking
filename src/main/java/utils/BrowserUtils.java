@@ -122,4 +122,9 @@ public class BrowserUtils {
 		}
 	}
 
+	public static void clickOnElement(WebElement element) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.moveToElement(element).click().perform();
+	}
+
 }

@@ -1,9 +1,12 @@
 package pages.headerSection;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 import java.util.List;
 
@@ -12,7 +15,7 @@ public class FlightTab extends BasePage {
 	@FindBy(css = ".me-3")
 	private List<WebElement> flightType;
 
-	@FindBy(className = ".headerSearchInput")
+	@FindBy(css = ".headerSearchInput")
 	private List<WebElement> searchBarInputFields;
 
 	@FindBy(css = ".headerSearch > div")
@@ -21,12 +24,28 @@ public class FlightTab extends BasePage {
 	@FindBy(css = ".headerSearch > div > button")
 	private WebElement searchButton;
 
+	@FindBy(css = "button.rdrDay")
+	private List<WebElement> dayButtons;
+
+	@FindBy(xpath = "//input[@placeholder='Early']")
+	private WebElement firstDate;
+
+	@FindBy(xpath = "//input[@placeholder='Continuous']")
+	private WebElement lastDate;
+
 	public void chooseRoundTrip() {
 		flightType.get(0).click();
 	}
 
 	public void chooseOneWay() {
 		flightType.get(1).click();
+	}
+
+	public void chooseFlightType(String flightType) {
+		switch (flightType) {
+			case "Round Trip" -> chooseRoundTrip();
+			case "One Way" -> chooseOneWay();
+		}
 	}
 
 	public void chooseClass(String className) {
@@ -44,8 +63,33 @@ public class FlightTab extends BasePage {
 		select.selectByVisibleText(arrival);
 	}
 
+	public void selectFirstDate(int index) {
+		List<WebElement> filterButton = dayButtons.stream()
+			.filter(button -> !button.getAttribute("class").contains("rdrDayPassive")
+					&& !button.getAttribute("class").contains("rdrDayDisabled"))
+			.toList();
+		BrowserUtils.clickOnElement(filterButton.get(index - 1));
+	}
+
+	public void selectLastDate(int index) {
+		List<WebElement> filterButton = dayButtons.stream()
+			.filter(button -> !button.getAttribute("class").contains("rdrDayPassive")
+					&& !button.getAttribute("class").contains("rdrDayDisabled"))
+			.toList();
+		BrowserUtils.clickOnElement(filterButton.get(index - 1));
+
+	}
+
+	public void clickOnDayByIndex(int index) {
+		List<WebElement> filterButton = dayButtons.stream()
+			.filter(button -> !button.getAttribute("class").contains("rdrDayPassive")
+					&& !button.getAttribute("class").contains("rdrDayDisabled"))
+			.toList();
+		BrowserUtils.clickOnElement(filterButton.get(index - 1));
+	}
+
 	public void clickOnDateField() {
-		dateAndPassengers.get(2).click();
+		actions.moveToElement(dateAndPassengers.get(2)).click().perform();
 	}
 
 	public void clickOnPassengersField() {
