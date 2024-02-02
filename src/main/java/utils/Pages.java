@@ -13,6 +13,7 @@ import pages.headerSection.BookingHomePage;
 
 import pages.hotels.Hotel_DetailPage;
 import pages.hotels.Hotels_FilterAndList_Page;
+import pages.stays.*;
 
 @Data
 public class Pages {
@@ -33,9 +34,23 @@ public class Pages {
 
 	private CarRentalDetails_Page carRentalDetailsPage;
 
+
+	private StaysHomePage staysHomePage;
+
+	private HotelFilterPage hotelFilterPage;
+
+	private HotelDetailPage hotelDetailPage;
+
+	private HotelYourDetailsPage yourDetailsPage;
+
+	private FinalInfoPage finalInfoPage;
+
+	private CheckoutPage checkoutPage;
+
 	private YourDeal_Page yourDealPage;
 
 	private FlightTabVerification flightTabVerification;
+
 
 	public Pages() {
 		homePage = new HomePage();
@@ -54,6 +69,17 @@ public class Pages {
 		yourDealPage = new YourDeal_Page();
 
 		flightTabVerification = new FlightTabVerification();
+
+		staysHomePage = new StaysHomePage();
+
+		hotelFilterPage = new HotelFilterPage();
+
+		hotelDetailPage = new HotelDetailPage();
+
+		yourDetailsPage = new HotelYourDetailsPage();
+
+		finalInfoPage = new FinalInfoPage();
+		checkoutPage = new CheckoutPage();
 
 	}
 
@@ -89,12 +115,33 @@ public class Pages {
 		return carRentalDetailsPage;
 	}
 
+
+	public StaysHomePage getStaysHomePage() {
+		return staysHomePage;
+	}
+
+	public HotelFilterPage getHotelFilterPage() {
+		return hotelFilterPage;
+	}
+
+	public HotelDetailPage getHotelDetailPage() {
+		return hotelDetailPage;
+	}
+
+	public HotelYourDetailsPage getHotelYourDetailsPage() {
+		return yourDetailsPage;
+	}
+
+	public FinalInfoPage getFinalInfoPage() {
+		return finalInfoPage;
+
 	public YourDeal_Page getYourDealPage() {
 		return yourDealPage;
 	}
 
 	public FlightTabVerification getFlightTabVerification() {
 		return flightTabVerification;
+
 	}
 
 }
