@@ -168,7 +168,8 @@ public class CarRentalDetailss_Page extends BasePage {
 	public boolean isThereAvailableCars() {
 		return !listedCarsFrames.isEmpty();
 	}
-	public int numberOfCarsAvailable(){
+
+	public int numberOfCarsAvailable() {
 		return listedCarsFrames.size();
 	}
 
