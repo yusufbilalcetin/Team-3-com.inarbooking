@@ -4,10 +4,14 @@ import lombok.Data;
 import pages.HomePage;
 import pages.carRentals.CarRentalDetails_Page;
 import pages.carRentals.YourDeal_Page;
+
+import pages.flights.*;
+
 import pages.flights.FlightTabVerification;
 import pages.flights.Flights_FilterAndList_Page;
 import pages.headerSection.*;
 import pages.carRentals.carRentalsS.*;
+
 import pages.headerSection.FlightTab;
 import pages.headerSection.HotelTab;
 
@@ -63,13 +67,27 @@ public class Pages {
 
 	private CarRentalConfirmation_Page carRentalConfirmationPage;
 
+	private Flights_Page flightsPage;
+
+	private ChooseYourFare_Page chooseYourFarePage;
+
+	private Flight_WhosFlying_Page whosFlyingPage;
+
+	private ExtrasForYourFlight_Page extrasForYourFlightPage;
+
+	private CheckAndPay_Page checkAndPayPage;
+
+	private Confirmation_Page confirmationPage;
+
 	public Pages() {
 		homePage = new HomePage();
 
 		hotelTab = new HotelTab();
+
 		flightTab = new FlightTab();
 
 		hotel_detailPage = new Hotel_DetailPage();
+
 		hotels_filterAndList_page = new Hotels_FilterAndList_Page();
 
 		bookingHomePage = new BookingHomePage();
@@ -98,6 +116,18 @@ public class Pages {
 		carRentalDetailsPage = new CarRentalDetails_Page();
 		carRentalDetailssPage = new CarRentalDetailss_Page();
 
+
+		flightsPage = new Flights_Page();
+
+		chooseYourFarePage = new ChooseYourFare_Page();
+
+		whosFlyingPage = new Flight_WhosFlying_Page();
+
+		extrasForYourFlightPage = new ExtrasForYourFlight_Page();
+
+		checkAndPayPage = new CheckAndPay_Page();
+
+		confirmationPage = new Confirmation_Page();
 
 	}
 
@@ -181,6 +211,14 @@ public class Pages {
 
 	public CarRentalConfirmation_Page getCarRentalConfirmationPage() {
 		return carRentalConfirmationPage;
+	}
+
+	public Flights_Page getFlightsPage() {
+		return flightsPage;
+	}
+
+	public ChooseYourFare_Page getChooseYourFarePage() {
+		return chooseYourFarePage;
 	}
 
 }

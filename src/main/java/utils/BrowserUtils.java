@@ -127,8 +127,16 @@ public class BrowserUtils {
 
 	}
 
+
+	public static void clickOnElement(WebElement element) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.moveToElement(element).click().perform();
+	}
+
+
 	public static void scrollDownWithPageDown() {
 		Actions actions = new Actions(DriverManager.getDriver());
 		actions.keyDown(Keys.PAGE_DOWN).build().perform();
 	}
+
 }
