@@ -20,6 +20,7 @@ public class FlightTab_StepDefs extends BaseStep {
 		LOGGER.info("I clicked on the Flight Tab");
 	}
 
+
 	@Then("User validates the Flight Tab Includes Search Bar and Options for Flight")
 	public void user_validates_the_flight_tab_includes_search_bar_and_options_for_flight() {
 		then(PAGES.getFlightTab().getSearchFlightsButtonText())
