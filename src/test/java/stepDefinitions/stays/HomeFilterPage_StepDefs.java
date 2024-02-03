@@ -16,6 +16,7 @@ public class HomeFilterPage_StepDefs extends BaseStep {
 	public void theUserSendToDestinationField(String location) {
 		PAGES.getHotelFilterPage().sendKeysToDestination(location);
 		LOGGER.debug("The user send {string} to destination field");
+
 	}
 
 	@And("The user click on Search button")
