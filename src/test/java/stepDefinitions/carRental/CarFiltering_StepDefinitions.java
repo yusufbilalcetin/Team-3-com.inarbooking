@@ -13,6 +13,7 @@ public class CarFiltering_StepDefinitions extends BaseStep {
 
 	public static final Logger LOGGER = LogManager.getLogger(CarFiltering_StepDefinitions.class);
 
+
 	@When("The user click on the Car Rental Tab")
 	public void the_user_click_on_the_car_rental_tab() {
 		PAGES.getBookingHomePage().clickOnCarRentalsTab();
